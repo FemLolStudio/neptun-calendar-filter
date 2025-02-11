@@ -8,8 +8,8 @@
 ## Required enviorment values
 *(.env also supported)*
 ```bash
-DOMAIN=neptun.domain.com
-TARGET_URL=https://api.mydomain.com
+DOMAIN="neptun.domain.com"
+TARGET_URL="https://api.mydomain.com"
 IP="0.0.0.0"
 PORT="9876"
 ```
