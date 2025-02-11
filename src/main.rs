@@ -14,6 +14,7 @@ mod http_server;
 mod logger;
 
 static DOMAIN: LazyLock<String> = LazyLock::new(|| enviorment::get_enviorment("DOMAIN"));
+static TARGET_URL: LazyLock<String> = LazyLock::new(|| enviorment::get_enviorment("TARGET_URL"));
 static IP: LazyLock<String> = LazyLock::new(|| enviorment::get_enviorment("IP"));
 static PORT: LazyLock<String> = LazyLock::new(|| enviorment::get_enviorment("PORT"));
 
@@ -25,6 +26,7 @@ async fn main() {
     //-----------------------------------------------------------------------
     _ = dotenv::dotenv();
     let _ = DOMAIN.deref();
+    let _ = TARGET_URL.deref();
     let _ = IP.deref();
     let _ = PORT.deref();
 
