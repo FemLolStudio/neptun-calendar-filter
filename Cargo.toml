@@ -1,0 +1,35 @@
+[package]
+name = "neptun-calendar-filter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# -- Tokio
+tokio = { version = "1", features = [
+    "macros",
+    "rt-multi-thread",
+    "fs",
+    "io-util",
+], default-features = false }
+# -- Axum
+axum = { version = "0.8", features = [
+    "tokio",
+    "multipart",
+    "http1",
+    "http2",
+    "original-uri"
+], default-features = false }
+http-body-util = "0.1"
+tower-http = { version = "0.6", default-features = false, features = ["compression-gzip"] }
+# -- http
+reqwest = {version = "0.12", default-features = false, features = ["http2", "rustls-tls"]}
+# -- calendar
+ical = { version = "0.11", default-features = false, features = ["ical", "generator"]}
+# -- Visualization
+time = {version = "0.3", features = ["parsing", "formatting"] }
+inline_colorization = "0.1"
+enable-ansi-support = "0.2"
+# -- Other
+thiserror = "2"
+ahash = { version = "0.8"}
+dotenv = "0.15"
